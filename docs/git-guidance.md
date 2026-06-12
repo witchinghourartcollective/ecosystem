@@ -23,19 +23,18 @@ Steps on how to create a Pull Request are written below.
   git remote add upstream https://github.com/qiskit-community/ecosystem.git
   ```
 
-- Checkout the main branch and merge upstream:
+- Sync your local `main` with upstream:
 
   ```bash
   git checkout main
+  git fetch upstream
   git merge upstream/main
   ```
 
 - Create a new branch to store your changes:
 
   ```bash
-  git checkout main
-  git branch new-branch
-  git checkout new-branch
+  git checkout -b new-branch
   ```
 
 - Make the necessary changes, then stage your files:
@@ -69,16 +68,10 @@ Steps on how to create a Pull Request are written below.
   git checkout main
   ```
 
-- Pull the development branch from the fork where the pull request was made:
+- Fetch and merge the development branch from the contributor's fork:
 
   ```bash
   git pull https://github.com/forkuser/forkedrepo.git new-branch
-  ```
-
-- Merge the development branch:
-
-  ```bash
-  git merge new-branch
   ```
 
 - Push main with the new feature merged into it:
